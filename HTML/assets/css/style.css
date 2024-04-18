@@ -2351,45 +2351,45 @@ Popup Newsletter: End
   transform: unset;
 }
 
-.header-menu.style-four>.container .header-main .menu-main>ul li>a::before {
+.header-menu.style-cuatro>.container .header-main .menu-main>ul li>a::before {
   background-color: var(--purple);
 }
 
-.header-menu.style-four>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .list-home .item:hover .text-button {
+.header-menu.style-cuatro>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .list-home .item:hover .text-button {
   color: var(--purple);
 }
 
-.header-menu.style-four>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .list-pages a i::before {
+.header-menu.style-cuatro>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .list-pages a i::before {
   color: var(--purple);
 }
 
-.header-menu.style-four>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .list-pages a:hover .text-button {
+.header-menu.style-cuatro>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .list-pages a:hover .text-button {
   color: var(--purple);
 }
 
-.header-menu.style-four>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .explore-block a {
+.header-menu.style-cuatro>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .explore-block a {
   background-color: var(--purple);
 }
 
-.header-menu.style-four>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .explore-block a:hover {
+.header-menu.style-cuatro>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .explore-block a:hover {
   background-color: #5700c9;
 }
 
 @media (max-width: 575.98px) {
-  .header-menu.style-four>.container .header-main .right-block .call-block {
+  .header-menu.style-cuatro>.container .header-main .right-block .call-block {
     display: none;
   }
 }
 
-.header-menu.style-four>.container #menu-mobile-block .logo svg g path:first-child {
+.header-menu.style-cuatro>.container #menu-mobile-block .logo svg g path:first-child {
   fill: var(--purple);
 }
 
-.header-menu.style-four>.container #menu-mobile-block .bg-blue {
+.header-menu.style-cuatro>.container #menu-mobile-block .bg-blue {
   background-color: var(--purple);
 }
 
-.header-menu.style-four>.container #menu-mobile-block .icon-blue::before {
+.header-menu.style-cuatro>.container #menu-mobile-block .icon-blue::before {
   color: var(--purple);
 }
 
@@ -2669,9 +2669,7 @@ Popup Newsletter: End
   width: 100%;
 }
 
-/*
-*** Menu Style Subpage: End
-*/
+/* *** Menu Style Subpage: End */
 /*
 Menu header: End
 */
@@ -4761,7 +4759,7 @@ Bread crum: End
 */
 .shared-bg-service {
   background-attachment: fixed;
-  background-image: url(../images/components/bg-service3.png);
+  background-image: url(../images/components/bg-service2-red.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -4871,7 +4869,7 @@ Bread crum: End
 */
 .shared-bg-service {
   background-attachment: fixed;
-  background-image: url(../images/components/bg-service3.png);
+  background-image: url(../images/components/bg-service2-red.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -7111,6 +7109,27 @@ Our Blog Home1: End
 /*
 *** FAQs Home4: End
 */
+
+/*
+*** FAQs Home5: Start
+*/
+.faqs-block.style-five {
+  position: relative;
+  z-index: 1;
+}
+
+.faqs-block.style-five .list-question>div .question-item-main i {
+  color: var(--red);
+}
+
+.faqs-block.style-five .list-question>div:last-child {
+  border-bottom: none;
+}
+
+/*
+*** FAQs Home5: End
+*/
+
 /*
 *** Form contact Home3: Start
 */
@@ -8911,3 +8930,19 @@ Page not found: End
 /*
 *** Reduce font and spacing: End
 */
+/** COMPONENTS */
+/* Download section Studio */
+.download-block .banner-infor {
+  position: relative;
+  height: calc(100% - 96px);
+}
+
+.download-block .banner-infor .text-content {
+  position: absolute;
+  top: 50%;
+  /* left: 50%; */
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+}
+
