@@ -3883,13 +3883,13 @@ fieldset:disabled .btn {
 
 .dropdown-menu {
     --bs-dropdown-zindex: 1000;
-    --bs-dropdown-min-width: 10rem;
+    --bs-dropdown-min-width: 7rem;
     --bs-dropdown-padding-x: 0;
-    --bs-dropdown-padding-y: 0.5rem;
+    --bs-dropdown-padding-y: 0.8rem;
     --bs-dropdown-spacer: 0.125rem;
     --bs-dropdown-font-size: 1rem;
     --bs-dropdown-color: var(--bs-body-color);
-    --bs-dropdown-bg: var(--bs-body-bg);
+    /* --bs-dropdown-bg: var(--bs-body-bg); */
     --bs-dropdown-border-color: var(--bs-border-color-translucent);
     --bs-dropdown-border-radius: var(--bs-border-radius);
     --bs-dropdown-border-width: var(--bs-border-width);
@@ -3909,6 +3909,8 @@ fieldset:disabled .btn {
     --bs-dropdown-header-padding-x: 1rem;
     --bs-dropdown-header-padding-y: 0.5rem;
     position: absolute;
+    inset: 5px auto auto 0px;
+    
     z-index: var(--bs-dropdown-zindex);
     display: none;
     min-width: var(--bs-dropdown-min-width);
@@ -3921,7 +3923,7 @@ fieldset:disabled .btn {
     background-color: var(--bs-dropdown-bg);
     background-clip: padding-box;
     border: var(--bs-dropdown-border-width) solid var(--bs-dropdown-border-color);
-    border-radius: var(--bs-dropdown-border-radius)
+    border-radius: var(--bs-dropdown-border-radius);
 }
 
 .dropdown-menu[data-bs-popper] {

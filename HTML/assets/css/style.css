@@ -1087,6 +1087,9 @@ select {
 .hover-bg-yeelow:hover {
   background-color: var(--yellow);
 }
+.hover-bg-black:hover {
+  background-color: var(--black-surface);
+}
 .hover-underline:hover {
   text-decoration: underline;
 }
@@ -2877,7 +2880,7 @@ Menu header: End
 .slider-block.style-two .slider-main {
   width: 100%;
   height: 100vh;
-  background-image: url(../../assets/images/slider/bg-slider2.png);
+  background-image: url(../../assets/images/slider/bg-slider2-blue.png);
   background-position: center;
   background-size: cover;
 }
@@ -7344,7 +7347,7 @@ Form contact (Contact page): End
   bottom: 0;
   width: 0;
   height: 100%;
-  background-color: var(--purple);
+  background-color: var(--blue);
   transition: all ease 0.3s;
 }
 
@@ -7353,7 +7356,7 @@ Form contact (Contact page): End
 }
 
 .our-benefit .list-benefit .row>a:hover .heading6 {
-  color: var(--purple);
+  color: var(--blue);
 }
 
 .our-benefit .list-benefit .row>a:hover .line-dark::before {
@@ -8930,7 +8933,86 @@ Page not found: End
 /*
 *** Reduce font and spacing: End
 */
-/** COMPONENTS */
+
+ .dropdown-toggle,  .dropdown-toggle:hover,  .dropdown-toggle:focus{
+  background-color: transparent;
+  border: none;
+  color: var(--white);
+}
+
+.dropdown-toggle:hover,  .dropdown-toggle:focus{
+  background-color: var(--on-surface);
+  border: none;
+  color: var(--white);
+}
+
+.dropdown-item{
+  color: var(--white);
+  background-color: transparent;
+  text-align: center;
+}
+
+.dropdown-item:hover{
+  color: var(--white);
+  background-color: var(--on-surface);
+  text-align: center;
+}
+
+/* .style-one .dropdown-item.active,
+.style-one .dropdown-item:active {
+    color: var(--white);
+    text-decoration: none;
+    background-color: var(--blue)
+} */
+
+
+.style-one .btn-group button:hover{
+  color: var(--blue);
+}
+
+.style-one.style-three .btn-group button:hover{
+  color: var(--yellow);
+}
+
+.style-two .btn-group button:hover{
+  color: var(--green);
+}
+
+.style-one.style-five .btn-group button:hover{
+  color: var(--red);
+}
+
+.style-one.style-cuatro .btn-group button:hover{
+  color: var(--purple);
+}
+
+.style-purple .btn-group button:hover{
+  color: var(--purple);
+}
+
+/* INDEX */
+@media (max-width: 991.98px) {
+  .subpages-block .img{
+    order: 2;
+    
+  }
+  .subpages-block .info{
+    padding-left: 15px;
+  }
+}
+
+/* @media (max-width: 991.98px) {
+  .subpages-block>embracing-multilingual-support:nth-child(2)>div>div>div:first-of-type{
+    order: 2;
+  }
+} */
+
+
+/* ACADEMIA */
+
+/* TOOLS */
+
+/* STUDIO */
 /* Download section Studio */
 .download-block .banner-infor {
   position: relative;
@@ -8946,3 +9028,6 @@ Page not found: End
   text-align: center;
 }
 
+/* FACTORY */
+
+/* CITY */
