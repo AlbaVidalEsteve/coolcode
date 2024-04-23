@@ -4,7 +4,8 @@ function obtenerNombreArchivo() {
   // Dividir la ruta en partes usando el caracter "/"
   var partesRuta = ruta.split("/");
   // Obtener la última parte que debería ser el nombre del archivo
-  var nombreArchivo = partesRuta.pop();
+  var nombreArchivo = partesRuta.slice(-1)[0].split(".")[0];
+  
   // Devolver el nombre del archivo
   return nombreArchivo;
 }
@@ -19,10 +20,10 @@ seleccion.forEach((selector) => {
     let idioma = e.target.innerHTML;
     switch (idioma) {
       case "Spanish":
-        window.location.assign(`../es/${nombre}`);
+        window.location.assign(`../../es/${nombre}/${nombre}.html`);
         break;
       case "English":
-        window.location.assign(`../en/${nombre}`);
+        window.location.assign(`../../en/${nombre}/${nombre}.html`);
         break;
     }
   });

@@ -57,6 +57,7 @@ const popupNewsletterBlock = document.querySelector('#popup-newsletter-block')
 const popupNewsletterMain = document.querySelector('#popup-newsletter-block .popup-newsletter-main')
 const closePopupNewsletterBtn = document.querySelector('#popup-newsletter-block .close-block')
 
+
 window.onload = () => {
   if (popupNewsletterBlock) {
     setTimeout(() => {
