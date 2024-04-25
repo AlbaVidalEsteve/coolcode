@@ -17,12 +17,12 @@ let seleccion = document.querySelectorAll(".dropdown-item");
 
 seleccion.forEach((selector) => {
   selector.addEventListener("click", (e) => {
-    let idioma = e.target.innerHTML;
+    let idioma = e.target.classList[1];
     switch (idioma) {
-      case "Spanish":
+      case "spanish":
         window.location.assign(`../../es/${nombre}/${nombre}.html`);
         break;
-      case "English":
+      case "english":
         window.location.assign(`../../en/${nombre}/${nombre}.html`);
         break;
     }

@@ -70,6 +70,11 @@ if (preventPopupInput) {
 
 //! Evento beforeunload para mostrar el pop-up antes de que el usuario intente salir de la página
 window.addEventListener("mouseleave", function (e) {
+  if (popupNewsletterBlock) {
+        setTimeout(function () {
+          popupNewsletterBlock.classList.add('open');
+        }, 1000);
+      }
   mostrarPopupNewsletter();
   mostrarPreventPopup(); // Llamamos a la función para controlar la visibilidad del checkbox
 });

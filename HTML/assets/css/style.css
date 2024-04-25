@@ -1198,6 +1198,15 @@ select {
   z-index: 2;
 }
 
+.sign-up .button span:nth-child(2) {
+  padding: 14px 28px;
+  border-radius: 68px;
+  display: inline-flex;
+  gap: 8px;
+  position: relative;
+  z-index: 1;
+}
+
 .button span:nth-child(2):has(i) {
   padding: 16px 28px;
 }
@@ -1977,11 +1986,56 @@ Popup Newsletter: End
   transform: translateZ(0);
 }
 
-.header-menu>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .list-home .item:hover i {
+/* .header-menu>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .list-home .item:hover i {
   transform: rotateY(360deg);
+} */
+
+.header-menu>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .list-home .item:hover{
+  & i{
+    transform: rotateY(360deg);
+  }
+  &:first-child i{
+    color: var(--blue);
+  }
+  &:nth-child(2) i{
+    color: var(--orange);
+  }
+  &:nth-child(3) i{
+    color: var(--yellow);
+  }
+  &:nth-child(4) i{
+    color: var(--red);
+  }
+  &:nth-child(5) i{
+    color: var(--purple);
+  }
+  &:last-child i{
+    color: var(--green);
+  }
 }
 
-.header-menu>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .list-home .item:hover .text-button {
+.header-menu>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .list-home .item:hover {
+  &:first-child .text-button{
+    color: var(--blue);
+  }
+  &:nth-child(2) .text-button{
+    color: var(--orange);
+  }
+  &:nth-child(3) .text-button{
+    color: var(--yellow);
+  }
+  &:nth-child(4) .text-button{
+    color: var(--red);
+  }
+  &:nth-child(5) .text-button{
+    color: var(--purple);
+  }
+  &:last-child .text-button{
+    color: var(--green);
+  }
+}
+
+.header-menu>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .list-home.services-nav .item:hover .text-button{
   color: var(--blue);
 }
 
@@ -2241,7 +2295,7 @@ Popup Newsletter: End
   background-color: var(--green);
 }
 
-.style-two .header-menu>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .list-home .item:hover .text-button {
+.style-two .header-menu>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .list-home.services-nav .item:hover .text-button {
   color: var(--green);
 }
 
@@ -2319,7 +2373,7 @@ Popup Newsletter: End
   background-color: var(--yellow);
 }
 
-.header-menu.style-three>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .list-home .item:hover .text-button {
+.header-menu.style-three>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .list-home.services-nav .item:hover .text-button {
   color: var(--yellow);
 }
 
@@ -2404,7 +2458,7 @@ Popup Newsletter: End
   background-color: var(--purple);
 }
 
-.header-menu.style-cuatro>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .list-home .item:hover .text-button {
+.header-menu.style-cuatro>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .list-home.services-nav .item:hover .text-button {
   color: var(--purple);
 }
 
@@ -2463,7 +2517,7 @@ Popup Newsletter: End
   background-color: var(--red);
 }
 
-.header-menu.style-five>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .list-home .item:hover .text-button {
+.header-menu.style-five>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .list-home.services-nav .item:hover .text-button {
   color: var(--red);
 }
 
@@ -2555,7 +2609,7 @@ Popup Newsletter: End
   background-color: var(--orange);
 }
 
-.header-menu.style-six>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .list-home .item:hover .text-button {
+.header-menu.style-six>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .list-home.services-nav .item:hover .text-button {
   color: var(--orange);
 }
 
@@ -2636,7 +2690,7 @@ Popup Newsletter: End
   background-color: var(--purple);
 }
 
-.style-purple .header-menu>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .list-home .item:hover .text-button {
+.style-purple .header-menu>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .list-home.services-nav .item:hover .text-button {
   color: var(--purple);
 }
 
@@ -5418,6 +5472,14 @@ Bread crum: End
 }
 .style-three .list-service .list .service-item:hover .heading6 {
   color: var(--black-surface);
+}
+
+.shared-bg-service-yellow {
+  background-attachment: fixed;
+  background-image: url(../images/components/bg-service3.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 
@@ -9653,7 +9715,7 @@ Page not found: End
 }
 
 .dropdown-item{
-  color: var(--white);
+  /* color: var(--white); */
   background-color: transparent;
   text-align: center;
 }
