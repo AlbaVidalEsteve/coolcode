@@ -1967,6 +1967,11 @@ Popup Newsletter: End
   padding-left: 12px;
 }
 
+.header-menu>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row>div .list-pages{
+  grid-template-columns: repeat(2,1fr);
+  align-items: center;
+}
+
 .header-menu>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .list-home {
   align-items: start;
   position: relative;
@@ -2051,9 +2056,19 @@ Popup Newsletter: End
   color: var(--blue);
 }
 
-.header-menu>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .banner-infor {
-  position: relative;
-  height: calc(100% - 96px);
+.header-menu>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row  .newsletter {
+  background-image: url(../images/components/bg-submenu-orange.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: 75% 20%;
+  column-gap: 5%;
+  text-align: left;
+  & i, div{
+    grid-column: span 2;
+    text-align: left;
+    padding-left: 1rem;
+  }
 }
 
 .header-menu>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .banner-infor .text-content {
@@ -2184,11 +2199,15 @@ Popup Newsletter: End
 .header-menu>.container #menu-mobile-block .menu-mobile-main ul li .sub-nav-mobile .list-pages,
 .header-menu>.container #menu-mobile-block .menu-mobile-main ul li .sub-nav-mobile .banner-infor {
   padding: 16px 24px;
+
 }
 
 .header-menu>.container #menu-mobile-block .menu-mobile-main ul li .sub-nav-mobile .banner-infor {
   position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
+
 
 .header-menu>.container #menu-mobile-block .menu-mobile-main ul li .sub-nav-mobile .banner-infor .bg-img {
   position: absolute;
@@ -2316,15 +2335,18 @@ Popup Newsletter: End
 .style-two .header-menu>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .explore-block a:hover {
   background-color: #02bd30;
 }
+.style-two .header-menu>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row  .newsletter {
+  background-image: url(../images/components/bg-submenu-orange.png);
+}
 
 .style-two .header-menu>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .banner-infor a:hover span:nth-child(2),
 .style-two .header-menu>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .explore-block a:hover span:nth-child(2) {
   background-color: #02bd30;
 }
 
-.style-two .header-menu>.container .header-main .logo svg g path:first-child {
+/* .style-two .header-menu>.container .header-main .logo svg g path:first-child {
   fill: var(--green);
-}
+} */
 
 .style-two .header-menu>.container .header-main .right-block a span:nth-child(2) {
   background-color: var(--green);
@@ -2334,9 +2356,9 @@ Popup Newsletter: End
   background-color: #02bd30;
 }
 
-.style-two .header-menu>.container #menu-mobile-block .logo svg g path:first-child {
+/* .style-two .header-menu>.container #menu-mobile-block .logo svg g path:first-child {
   fill: var(--green);
-}
+} */
 
 .style-two .header-menu>.container #menu-mobile-block .bg-blue {
   background-color: var(--green);
@@ -2361,9 +2383,9 @@ Popup Newsletter: End
   transform: translateY(-50%);
 }
 
-.header-menu.style-three>.container .header-main .logo svg g path:first-child {
+/* .header-menu.style-three>.container .header-main .logo svg g path:first-child {
   fill: var(--yellow);
-}
+} */
 
 .header-menu.style-three>.container .header-main .menu-main {
   padding-left: 104px;
@@ -2427,9 +2449,9 @@ Popup Newsletter: End
   margin-top: 1px;
 }
 
-.header-menu.style-three>.container #menu-mobile-block .logo svg g path:first-child {
+/* .header-menu.style-three>.container #menu-mobile-block .logo svg g path:first-child {
   fill: var(--yellow);
-}
+} */
 
 .header-menu.style-three>.container #menu-mobile-block .list-social a i::before {
   color: var(--on-surface);
@@ -2484,9 +2506,9 @@ Popup Newsletter: End
   }
 }
 
-.header-menu.style-cuatro>.container #menu-mobile-block .logo svg g path:first-child {
+/* .header-menu.style-cuatro>.container #menu-mobile-block .logo svg g path:first-child {
   fill: var(--purple);
-}
+} */
 
 .header-menu.style-cuatro>.container #menu-mobile-block .bg-blue {
   background-color: var(--purple);
@@ -2505,9 +2527,9 @@ Popup Newsletter: End
   transform: translateY(-50%);
 }
 
-.header-menu.style-five>.container .header-main .logo svg g path:first-child {
+/* .header-menu.style-five>.container .header-main .logo svg g path:first-child {
   fill: var(--red);
-}
+} */
 
 .header-menu.style-five>.container .header-main .menu-main {
   padding-left: 104px;
@@ -2571,9 +2593,9 @@ Popup Newsletter: End
   margin-top: 1px;
 }
 
-.header-menu.style-five>.container #menu-mobile-block .logo svg g path:first-child {
+/* .header-menu.style-five>.container #menu-mobile-block .logo svg g path:first-child {
   fill: var(--red);
-}
+} */
 
 .header-menu.style-five>.container #menu-mobile-block .list-social a i::before {
   color: var(--on-surface);
@@ -2597,9 +2619,9 @@ Popup Newsletter: End
   transform: translateY(-50%);
 }
 
-.header-menu.style-six>.container .header-main .logo svg g path:first-child {
+/* .header-menu.style-six>.container .header-main .logo svg g path:first-child {
   fill: var(--orange);
-}
+} */
 
 .header-menu.style-six>.container .header-main .menu-main {
   padding-left: 104px;
@@ -2662,10 +2684,12 @@ Popup Newsletter: End
   margin-left: 1px;
   margin-top: 1px;
 }
-
-.header-menu.style-six>.container #menu-mobile-block .logo svg g path:first-child {
-  fill: var(--orange);
+.header-menu.style-six >.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row  .newsletter {
+  background-image: url(../images/components/bg-submenu-orange.png);
 }
+/* .header-menu.style-six>.container #menu-mobile-block .logo svg g path:first-child {
+  fill: var(--orange);
+} */
 
 .header-menu.style-six>.container #menu-mobile-block .list-social a i::before {
   color: var(--on-surface);
@@ -2722,9 +2746,9 @@ Popup Newsletter: End
   background-color: #5700c9;
 }
 
-.style-purple .header-menu>.container .header-main .logo svg g path:first-child {
+/* .style-purple .header-menu>.container .header-main .logo svg g path:first-child {
   fill: var(--purple);
-}
+} */
 
 .style-purple .header-menu>.container .header-main .right-block a span:nth-child(2) {
   background-color: var(--purple);
@@ -2734,9 +2758,9 @@ Popup Newsletter: End
   background-color: #5700c9;
 }
 
-.style-purple .header-menu>.container #menu-mobile-block .logo svg g path:first-child {
+/* .style-purple .header-menu>.container #menu-mobile-block .logo svg g path:first-child {
   fill: var(--purple);
-}
+} */
 
 .style-purple .header-menu>.container #menu-mobile-block .bg-blue {
   background-color: var(--purple);

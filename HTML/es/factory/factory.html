@@ -856,13 +856,13 @@
             <div class="close-block text-end"><i class="ph-bold ph-x d-block fs-18 text-white pointer"></i></div>
             <div class="heading6 text-white">News letter</div>
             <div class="text-placehover mt-8">Suscríbete para recibir las últimas noticias, actualizaciones, ofertas y promociones de CoolCode.</div>
-            <form class="mt-32">
-              <div class="form-input">
-                <input class="bg-line-dark text-white" type="text" placeholder="Email"/>
-                <button><i class="ph ph-paper-plane-tilt text-placehover"></i></button>
-              </div>
+            <form>
               <p class="mt-16">¿En qué estás interesado?</p>
               <div id="optionsPop" class="flex-item-center">
+                <div class="flex-item-center gap-8">
+                  <input type="checkbox" name="todo" id="todo" value="todo">
+                  <label for="todo">All</label>
+                </div>
                 <div class="flex-item-center gap-8">
                   <input type="checkbox" name="comic" id="academy" value="academy">
                   <label for="academy">Academy</label>
@@ -883,15 +883,15 @@
                   <input type="checkbox" name="comic" id="city" value="city">
                   <label for="city">City</label>
                 </div>
-                <div class="flex-item-center gap-8">
-                  <input type="checkbox" name="todo" id="todo" value="todo">
-                  <label for="todo">All</label>
-                </div>
               </div>
-              <div class="flex-item-center gap-8 mt-12">
+              <div class="form-input mtt-32">
+                <input class="bg-line-dark text-white" type="text" placeholder="Email"/>
+                <button><i class="ph ph-paper-plane-tilt text-placehover"></i></button>
+              </div>
+              <!-- <div class="flex-item-center gap-8 mt-12">
                 <input class="prevent-popup-input" type="checkbox" name="prevent"/>
-                <div class="caption1 text-placehover">Prevent this Pop-up</div>
-              </div>
+                <div class="caption1 text-placehover">Bloquea este Pop-up</div>
+              </div> -->
             </form>
           </div>
         </div>

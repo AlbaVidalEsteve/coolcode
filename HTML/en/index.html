@@ -181,18 +181,18 @@
                     </div>
                   </li>
                   <li class="flex-center"><a class="text-subtitle" href="#!">Pages<i class="ph ph-caret-down fs-12 pl-4"></i></a>
-                    <div class="sub-nav">
+                    <div class="sub-nav pages">
                       <div class="sub-nav-main bg-black-surface p-24">
-                        <div class="row">
-                          <div class="col-6">
-                            <div class="list-pages p-24 flex-column flex-start justify-content-around bora-16 h-100">
-                              <a class="item flex-item-center gap-8" href="about.html"><i class="icon-infor icon-blue fs-28"> </i>
+                        <div class="row justify-content-between">
+                          <div class="col-7">
+                            <div class="list-pages d-sm-grid p-24 bora-16 h-100">
+                              <a class="item flex-item-center flex-column gap-8" href="about.html"><i class="icon-infor icon-blue fs-28"> </i>
                                 <div class="text-button text-white">About Us</div></a>
-                              <a class="item flex-item-center gap-8" href="faqs.html"><i class="icon-faq icon-blue fs-28"> </i>
+                              <a class="item flex-item-center flex-column gap-8" href="faqs.html"><i class="icon-faq icon-blue fs-28"> </i>
                                 <div class="text-button text-white">FAQs</div></a>
-                              <a class="item flex-item-center gap-8" href="#!"><i class="icon-not-found icon-blue fs-28"> </i>
+                              <a class="item flex-item-center flex-column gap-8" href="#!"><i class="icon-not-found icon-blue fs-28"> </i>
                                 <div class="text-button text-white">Terms of Services</div></a>
-                              <a class="item flex-item-center gap-8" href="#!"><i class="icon-pricing icon-blue fs-28"> </i>
+                              <a class="item flex-item-center flex-column gap-8 mb-4" href="#!"><i class="icon-pricing icon-blue fs-28"> </i>
                                 <div class="text-button text-white">Privacy Policy</div></a>
                             </div>
                             <!-- <div class="banner-infor bora-16 overflow-hidden mt-20">
@@ -203,7 +203,7 @@
                               </div>
                             </div> -->
                           </div>
-                          <div class="col-6">
+                          <div class="col-5">
                             <!-- <div class="main-content bg-line-dark bora-12 h-100"> -->
                               <div class="newsletter flex-column-center bg-line-dark p-32 bora-16"><i class="icon-send-mail fs-64"></i>
                                 <div class="heading7 text-center mt-16">Subscribe For Daily Newsletter</div>
@@ -1195,9 +1195,13 @@
             <div class="close-block text-end"><i class="ph-bold ph-x d-block fs-18 text-white pointer"></i></div>
             <div class="heading6 text-white">News letter</div>
             <div class="text-placehover mt-8">Sign up to get all the latest CoolCode news, website updates, offers and promos.</div>
-            <form class="mt-32">
-              <p class="">What are you looking for?</p>
+            <form>
+              <p class="mt-16">What are you looking for?</p>
               <div id="optionsPop" class="flex-item-center">
+                <div class="flex-item-center gap-8">
+                  <input type="checkbox" name="todo" id="todo" value="todo">
+                  <label for="todo">All</label>
+                </div>
                 <div class="flex-item-center gap-8">
                   <input type="checkbox" name="comic" id="academy" value="academy">
                   <label for="academy">Academy</label>
@@ -1218,27 +1222,15 @@
                   <input type="checkbox" name="comic" id="city" value="city">
                   <label for="city">City</label>
                 </div>
-                <div class="flex-item-center gap-8 mt-12">
-                  <input type="checkbox" name="todo" id="todo" value="todo">
-                  <label for="todo">All</label>
-                </div>
               </div>
-              <div class="flex-item-center mt-32 justify-content-center">
-                <div class="flex-item-center gap-8">
-                  <input type="checkbox" name="terms" id="terms" value="terms">
-                  <label for="terms">I accept the <a href="#" class="text-blue-hover text-decoration-underline">Terms and Conditions</a>.</label>
-                </div>
-              </div>
-              
-              <div class="form-input mt-12">
+              <div class="form-input mt-32">
                 <input class="bg-line-dark text-white" type="text" placeholder="Email"/>
                 <button><i class="ph ph-paper-plane-tilt text-placehover"></i></button>
               </div>
-              
-              <div class="flex-item-center gap-8 mt-12">
+              <!-- <div class="flex-item-center prevent-popup-block gap-8 mt-12">
                 <input class="prevent-popup-input" type="checkbox" name="prevent"/>
                 <div class="caption1 text-placehover">Prevent this Pop-up</div>
-              </div>
+              </div> -->
             </form>
           </div>
         </div>

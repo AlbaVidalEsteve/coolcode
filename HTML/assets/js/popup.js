@@ -1,3 +1,17 @@
+// Añadir correo de nav a pop-up
+let mailNL = document.querySelectorAll(".newsletter input");
+let mailPop = document.querySelectorAll(".form-input input");
+
+mailNL.forEach((normalInput) => {
+  normalInput.addEventListener("input", function () {
+    const correo = normalInput.value;
+    // console.log("Correo introducido:", correo);
+    mailPop.forEach((popInput) => {
+      correo = popInput.value;
+    });
+  });
+});
+
 // POPUP
 let options = document.querySelectorAll("#optionsPop input");
 let labels = document.querySelectorAll("#optionsPop label");
@@ -34,7 +48,7 @@ var popupNewsletterBlock = document.querySelector("#popup-newsletter-block");
 var closePopupNewsletterBtn = document.querySelector(
   "#popup-newsletter-block .close-block"
 );
-const newsletterBtns = document.querySelectorAll(".newsletter-btn");
+// const newsletterBtns = document.querySelectorAll(".newsletter-btn");
 var preventPopupInput = document.querySelector(".prevent-popup-input");
 var preventPopupBlock = document.querySelector(".prevent-popup-block");
 
@@ -42,145 +56,96 @@ var preventPopupBlock = document.querySelector(".prevent-popup-block");
 function mostrarPopupNewsletter() {
   popupNewsletterBlock.classList.add("open");
 }
-// Función para mostrar el pop-up con el botón
+
+// Función para mostrar la opción "No volver a mostrar" después de tres intentos de salir de la página
+// function mostrarPreventPopup() {
+//   if (intentos >= 3) {
+//     preventPopupBlock.classList.remove("hidden");
+//   }
+// }
+
+// Pop up newsletter
+var popupNewsletterBlock = document.querySelector("#popup-newsletter-block");
+var popupNewsletterMain = document.querySelector(
+  "#popup-newsletter-block .popup-newsletter-main"
+);
+var closePopupNewsletterBtn = document.querySelector(
+  "#popup-newsletter-block .close-block"
+);
+const newsletterBtns = document.querySelectorAll(".newsletter-btn");
+
+// Mostrar pop up con botones
 newsletterBtns.forEach(function (btn) {
   btn.addEventListener("click", () => {
     popupNewsletterBlock.classList.add("open");
   });
 });
 
-// Función para mostrar la opción "No volver a mostrar" después de tres intentos de salir de la página
-function mostrarPreventPopup() {
-  if (intentos >= 3) {
-    preventPopupBlock.classList.remove("hidden");
-  }
-}
+//! POPUP ON LOAD
+// window.onload = function () {
+//   if (popupNewsletterBlock) {
+//     setTimeout(function () {
+//       popupNewsletterBlock.classList.add('open');
+//     }, 1000);
+//   }
+// };
 
-// Evento click en la casilla de verificación "No volver a mostrar"
-if (preventPopupInput) {
-  preventPopupInput.addEventListener("change", function () {
-    var popupNewsletter = localStorage.getItem("popupNewsletter");
-    if (preventPopupInput.checked) {
-      localStorage.setItem("popupNewsletter", "prevent");
-    } else {
-      localStorage.removeItem("popupNewsletter");
-    }
-  });
-}
-
-//! Evento beforeunload para mostrar el pop-up antes de que el usuario intente salir de la página
-window.addEventListener("mouseleave", function (e) {
-  if (popupNewsletterBlock) {
-        setTimeout(function () {
-          popupNewsletterBlock.classList.add('open');
-        }, 1000);
-      }
-  mostrarPopupNewsletter();
-  mostrarPreventPopup(); // Llamamos a la función para controlar la visibilidad del checkbox
-});
-
-// Función para cerrar el pop-up del boletín de noticias
 if (closePopupNewsletterBtn) {
   closePopupNewsletterBtn.addEventListener("click", function () {
     popupNewsletterBlock.classList.remove("open");
   });
 }
 
-// Prevenir el comportamiento predeterminado al hacer clic en el contenido del pop-up del boletín de noticias
-popupNewsletterBlock.addEventListener("click", function () {
-  popupNewsletterBlock.classList.remove("open");
-});
+// click outside mobile menu, close mobile menu
+if (popupNewsletterBlock) {
+  popupNewsletterBlock.addEventListener("click", function () {
+    popupNewsletterBlock.classList.remove("open");
+  });
+}
 
-// Evento click fuera del pop-up para cerrarlo
-popupNewsletterBlock
-  .querySelector(".popup-newsletter-main")
-  .addEventListener("click", function (event) {
+// prevent default behavior when clicking mobile menu
+if (popupNewsletterMain) {
+  popupNewsletterMain.addEventListener("click", function (event) {
     event.stopPropagation();
   });
+}
 
-// Mostrar la opción "No volver a mostrar" después de tres intentos de salir de la página
-mostrarPreventPopup();
+// Prevent Pop up
+// check for saved 'darkMode' in localStorage
+var popupNewsletter = localStorage.getItem("popupNewsletter");
+localStorage.setItem("popupNewsletter", "");
+var disablePopupNewsletter = function disablePopupNewsletter() {
+  // 1. Add the class to the body
+  document.body.classList.add("prevent-popupNewsletter");
+  // 2. Update popupNewsletter in localStorage
+  localStorage.setItem("popupNewsletter", "prevent");
+};
+var enablepopupNewsletter = function enablepopupNewsletter() {
+  // 1. Remove the class from the body
+  document.body.classList.remove("prevent-popupNewsletter");
+  // 2. Update popupNewsletter in localStorage
+  localStorage.setItem("popupNewsletter", null);
+};
 
-// *Antes
-// // Pop up newsletter
-// var popupNewsletterBlock = document.querySelector('#popup-newsletter-block');
-// var popupNewsletterMain = document.querySelector('#popup-newsletter-block .popup-newsletter-main');
-// var closePopupNewsletterBtn = document.querySelector('#popup-newsletter-block .close-block');
-// const newsletterBtns = document.querySelectorAll('.newsletter-btn');
-// // console.log(newsletterBtns)
+// If the user already visited and prevent popupNewsletter
+// start things off with it on
+if (popupNewsletter === "prevent") {
+  disablePopupNewsletter();
+}
 
-// newsletterBtns.forEach(function (btn) {
-//   btn.addEventListener('click', ()=>{
-//     popupNewsletterBlock.classList.add('open')
-//   })
+// When someone clicks the button
+var preventPopupInput = document.querySelector(".prevent-popup-input");
+if (preventPopupInput) {
+  preventPopupInput.addEventListener("change", function () {
+    // get their popupNewsletter setting
+    popupNewsletter = localStorage.getItem("popupNewsletter");
 
-// })
-
-// //! POPUP ON LOAD
-// // window.onload = function () {
-// //   if (popupNewsletterBlock) {
-// //     setTimeout(function () {
-// //       popupNewsletterBlock.classList.add('open');
-// //     }, 1000);
-// //   }
-// // };
-// if (closePopupNewsletterBtn) {
-//   closePopupNewsletterBtn.addEventListener('click', function () {
-//     popupNewsletterBlock.classList.remove('open');
-//   });
-// }
-
-// // click outside mobile menu, close mobile menu
-// if (popupNewsletterBlock) {
-//   popupNewsletterBlock.addEventListener('click', function () {
-//     popupNewsletterBlock.classList.remove('open');
-//   });
-// }
-
-// // prevent default behavior when clicking mobile menu
-// if (popupNewsletterMain) {
-//   popupNewsletterMain.addEventListener('click', function (event) {
-//     event.stopPropagation();
-//   });
-// }
-
-// // Prevent Pop up
-// // check for saved 'darkMode' in localStorage
-// var popupNewsletter = localStorage.getItem('popupNewsletter');
-// localStorage.setItem('popupNewsletter', '');
-// var disablePopupNewsletter = function disablePopupNewsletter() {
-//   // 1. Add the class to the body
-//   document.body.classList.add('prevent-popupNewsletter');
-//   // 2. Update popupNewsletter in localStorage
-//   localStorage.setItem('popupNewsletter', 'prevent');
-// };
-// var enablepopupNewsletter = function enablepopupNewsletter() {
-//   // 1. Remove the class from the body
-//   document.body.classList.remove('prevent-popupNewsletter');
-//   // 2. Update popupNewsletter in localStorage
-//   localStorage.setItem('popupNewsletter', null);
-// };
-
-// // If the user already visited and prevent popupNewsletter
-// // start things off with it on
-// if (popupNewsletter === 'prevent') {
-//   disablePopupNewsletter();
-// }
-
-// // When someone clicks the button
-// var preventPopupInput = document.querySelector('.prevent-popup-input');
-// if (preventPopupInput) {
-//   preventPopupInput.addEventListener('change', function () {
-//     // get their popupNewsletter setting
-//     popupNewsletter = localStorage.getItem('popupNewsletter');
-
-//     // if it not current prevent, enable it
-//     if (preventPopupInput.checked) {
-//       disablePopupNewsletter();
-//       // if it has been prevent, turn it off
-//     } else {
-//       enablepopupNewsletter();
-//     }
-//   });
-// }
-
+    // if it not current prevent, enable it
+    if (preventPopupInput.checked) {
+      disablePopupNewsletter();
+      // if it has been prevent, turn it off
+    } else {
+      enablepopupNewsletter();
+    }
+  });
+}
