@@ -69,6 +69,7 @@ then you can search by title in the table of contents or classname, id, ...
   --orange: #F58450;
   --white: #FFFFFF;
   --on-surface: #121215;
+  --light-surface: hsla(0, 0%, 100%, 0.2);
   --black-surface: #000;
   --surface: #F8F8F8;
   --line: #E5E5E5;
@@ -458,6 +459,9 @@ select {
 
 .bg-on-surface {
   background-color: var(--on-surface);
+}
+.bg-light-surface{
+  background-color: var(--light-surface);
 }
 
 .bg-black-surface {
@@ -2057,11 +2061,11 @@ Popup Newsletter: End
 }
 
 .header-menu>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row  .newsletter {
-  background-image: url(../images/components/bg-submenu-orange.png);
+  background-image: url(../images/components/bg-submenu.png);
   background-repeat: no-repeat;
   background-size: cover;
   display: grid;
-  grid-template-columns: 75% 20%;
+  grid-template-columns: 70% 25%;
   column-gap: 5%;
   text-align: left;
   & i, div{
@@ -2189,6 +2193,21 @@ Popup Newsletter: End
   transition: all ease 0.4s;
   overflow-x: hidden;
 }
+/* !Nuevo start */
+.header-menu>.container #menu-mobile-block .menu-mobile-main ul li .sub-nav-mobile .open{
+  position: absolute;
+  width: 75%;
+  height: 100vh;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+  transition: all ease 0.4s;
+  /* overflow-x: hidden; */
+}
+/*! Nuevo end */
 
 .header-menu>.container #menu-mobile-block .menu-mobile-main ul li .sub-nav-mobile .heading {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -2226,8 +2245,12 @@ Popup Newsletter: End
 }
 
 .header-menu>.container #menu-mobile-block .menu-mobile-main ul li .sub-nav-mobile .list-social a {
-  width: 30px;
-  height: 30px;
+  width: 42px;
+  height: 42px;
+  & svg{
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .header-menu>.container #menu-mobile-block .menu-mobile-main ul li .sub-nav-mobile .list-social a i {
@@ -2407,10 +2430,10 @@ Popup Newsletter: End
   color: var(--yellow);
 }
 
-.header-menu.style-three>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .explore-block a {
+/* .header-menu.style-three>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .explore-block a {
   background-color: var(--yellow);
   color: var(--on-surface);
-}
+} */
 
 .header-menu.style-three>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .explore-block a i::before {
   color: var(--on-surface);
@@ -2492,9 +2515,9 @@ Popup Newsletter: End
   color: var(--purple);
 }
 
-.header-menu.style-cuatro>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .explore-block a {
+/* .header-menu.style-cuatro>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .explore-block a {
   background-color: var(--purple);
-}
+} */
 
 .header-menu.style-cuatro>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .explore-block a:hover {
   background-color: #5700c9;
@@ -2551,10 +2574,10 @@ Popup Newsletter: End
   color: var(--red);
 }
 
-.header-menu.style-five>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .explore-block a {
+/* .header-menu.style-five>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .explore-block a {
   background-color: var(--red);
   color: var(--on-surface);
-}
+} */
 
 .header-menu.style-five>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .explore-block a i::before {
   color: var(--on-surface);
@@ -2643,10 +2666,10 @@ Popup Newsletter: End
   color: var(--orange);
 }
 
-.header-menu.style-six>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .explore-block a {
+/* .header-menu.style-six>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .explore-block a {
   background-color: var(--orange);
   color: var(--on-surface);
-}
+} */
 
 .header-menu.style-six>.container .header-main .menu-main>ul li .sub-nav .sub-nav-main .row .explore-block a i::before {
   color: var(--on-surface);
@@ -4678,7 +4701,7 @@ Bread crum: End
 
 /* ** List partner autoplay Home6: Start */
 .style-six .list-partner-slide {
-  background-color: var(--orange);
+  background-color: var(--black-surface);
   padding-top: 36px;
   padding-bottom: 36px;
 }
@@ -5354,6 +5377,98 @@ Bread crum: End
 *** List service Home2: End
 */
 /*
+*** List service custom TOOLS Start
+*/
+.projects-block.style-three .list .service-item {
+  transition: all ease 0.4s;
+  position: relative;
+}
+
+.projects-block.style-three .list .service-item .heading i::before {
+  transition: all ease 0.4s;
+  color: var(--secondary);
+}
+
+.projects-block.style-three .list .service-item .desc {
+  padding-bottom: 56px;
+}
+
+.projects-block.style-three .list .service-item .read {
+  position: absolute;
+  left: 24px;
+  bottom: 32px;
+  overflow: hidden;
+}
+
+.projects-block.style-three .list .service-item .read .text-button {
+  position: absolute;
+  transition: all ease 0.4s;
+  left: -90px;
+}
+
+.projects-block.style-three .list .service-item .read i {
+  transition: all ease 0.4s;
+}
+
+.projects-block.style-three .list .service-item .read:hover i {
+  margin-left: 96px !important;
+}
+
+.projects-block.style-three .list .service-item:hover {
+  box-shadow: 0px 10px 25px 0px rgba(54, 95, 104, 0.1);
+}
+
+.projects-block.style-three .list .service-item:hover .heading i::before {
+  /* color: var(--on-surface); */
+  color: var(--yellow);
+}
+
+.projects-block.style-three .list .service-item:hover .read .text-button {
+  left: 0;
+}
+
+.projects-block.style-three .list .service-item:hover .read i {
+  margin-left: 90px;
+}
+
+@media (max-width: 1023.98px) {
+  .projects-block.style-three .list .service-item .read .text-button {
+    position: relative;
+    left: 0;
+  }
+
+  .projects-block.style-three .list .service-item .read:hover i {
+    margin-left: 0 !important;
+  }
+
+  .projects-block.style-three .list .service-item:hover .read i {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .projects-block.style-three .list .service-item {
+    padding-bottom: 16px;
+  }
+
+  .projects-block.style-three .list .service-item .desc {
+    padding-bottom: 44px;
+  }
+
+  .projects-block.style-three .list .service-item .read {
+    left: 16px;
+    bottom: 20px;
+  }
+
+  .projects-block.style-three .list .service-item .read i {
+    font-size: 24px;
+  }
+}
+
+/*
+*** List service custom TOOLS: End
+*/
+/*
 *** List service Home3: Start
 */
 .shared-bg-service {
@@ -5431,6 +5546,7 @@ Bread crum: End
   margin-top: -8px;
 }
 
+
 .list-service .list .service-item:hover i::before {
   color: var(--white);
 }
@@ -5438,6 +5554,23 @@ Bread crum: End
 .list-service .list .service-item:hover .text-placehover {
   color: var(--white);
 }
+
+.list-service.style-three .list .service-item:hover {
+  background-color: var(--yellow);
+  margin-top: -8px;
+}
+
+.list-service.style-three .list .service-item:hover i::before {
+  color: var(--black-surface);
+}
+
+.list-service.style-three .list .service-item:hover .text-placehover {
+  color: var(--black-surface);
+}
+.list-service.style-three .list .service-item:hover .heading6 {
+  color: var(--black-surface);
+}
+
 
 @media (max-width: 1023.98px) {
   .list-service .list .service-item:hover {
@@ -5538,6 +5671,13 @@ Bread crum: End
 .shared-bg-service {
   background-attachment: fixed;
   background-image: url(../images/components/bg-service2-red.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.style-three .shared-bg-service {
+  background-attachment: fixed;
+  background-image: url(../images/components/bg-service3.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -9739,14 +9879,14 @@ Page not found: End
 }
 
 .dropdown-item{
-  /* color: var(--white); */
+  color: var(--white);
   background-color: transparent;
   text-align: center;
 }
 
 .dropdown-item:hover{
   color: var(--white);
-  background-color: var(--on-surface);
+  /* background-color: var(--on-surface); */
   text-align: center;
 }
 
@@ -9758,32 +9898,51 @@ Page not found: End
 } */
 
 
-.style-one .btn-group button:hover{
-  color: var(--blue);
+
+.style-one .btn-group ul button:hover{
+  /* color: var(--blue); */
+  /* background-color: var(--blue); */
+}
+.btn-group  button:hover{
+  /* color: var(--black-surface); */
+  background-color: var(--black-surface);
+  /* font-weight: bold; */
+}
+
+.btn-group  button.selected{
+  /* color: var(--black-surface); */
+  background-color: var(--light-surface);
+  /* font-weight: bold; */
 }
 
 .style-one.style-three .btn-group button:hover{
   color: var(--yellow);
+  /* background-color: var(--yellow); */
 }
 
 .style-one.style-six .btn-group button:hover{
   color: var(--orange);
+  /* background-color: var(--orange); */
 }
 
 .style-two .btn-group button:hover{
   color: var(--green);
+  /* background-color: var(--green); */
 }
 
 .style-one.style-five .btn-group button:hover{
   color: var(--red);
+  /* background-color: var(--red); */
 }
 
-.style-one.style-cuatro .btn-group button:hover{
+.style-one.style-cuatro .btn-group ul button:hover{
   color: var(--purple);
+  /* background-color: var(--purple); */
 }
 
-.style-purple .btn-group button:hover{
+.style-purple .btn-group ul button:hover{
   color: var(--purple);
+  /* background-color: var(--purple); */
 }
 
 /* INDEX */

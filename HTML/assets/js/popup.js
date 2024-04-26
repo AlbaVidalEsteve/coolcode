@@ -7,7 +7,7 @@ mailNL.forEach((normalInput) => {
     const correo = normalInput.value;
     // console.log("Correo introducido:", correo);
     mailPop.forEach((popInput) => {
-      correo = popInput.value;
+      popInput.value = correo;
     });
   });
 });
@@ -17,31 +17,40 @@ let options = document.querySelectorAll("#optionsPop input");
 let labels = document.querySelectorAll("#optionsPop label");
 let AllOptions = document.querySelector("#todo");
 
-options.forEach((option) => {
-  option.addEventListener("change", function () {
+options.forEach(option => {
+  option.addEventListener('change', function() {
     const label = this.nextElementSibling;
     if (this.checked) {
-      label.classList.add("text-placehover");
+      label.classList.add('text-placehover');
     } else {
-      label.classList.remove("text-placehover");
+      label.classList.remove('text-placehover');
+      if (AllOptions.checked) {
+        AllOptions.checked = false;
+        labels.forEach(label => {
+          if (label.htmlFor === 'todo') {
+            label.classList.remove('text-placehover');
+          }
+        });
+      }
     }
   });
 });
 
-AllOptions.addEventListener("change", function () {
-  options.forEach((option) => {
+AllOptions.addEventListener('change', function() {
+  options.forEach(option => {
     option.checked = AllOptions.checked;
     const label = option.nextElementSibling;
     if (AllOptions.checked) {
-      label.classList.add("text-placehover");
-      if (option.id === "todo") {
-        label.classList.remove("text-placehover");
+      label.classList.add('text-placehover');
+      if (option.id === 'todo') {
+        label.classList.remove('text-placehover');
       }
     } else {
-      label.classList.remove("text-placehover");
+      label.classList.remove('text-placehover');
     }
   });
 });
+
 //Open Popup
 var intentos = 0;
 var popupNewsletterBlock = document.querySelector("#popup-newsletter-block");
